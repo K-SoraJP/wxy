@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Karaoke.Web-β</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="./assets/style.css" rel="stylesheet">
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+</head>
+<body>
+	<div class="container">
+		<u><h1 id="music">○ W / X / Y ○</h1></u><br>
+		<div class="select-wrapper">
+			<select id="song-select" class="form-control">
+				<option value="" disabled selected hidden>伴奏の種類</option>
+				<option value="song2">通常</option>
+				<option value="song1">ボーカルあり(on-vocal)</option>
+			</select><br>
+		</div>
+		<div id="song-info" hidden>
+            <h4 id="title"></h4>
+            <h7 id="author"></h7>
+        </div>
+		<h4 id="h4" hidden>★Result★</h4>
+		<div id="score-div" hidden>
+            <u><h4 id="score"></h4></u>
+        </div><br>
+		<div id="div2" hidden>
+			<audio preload="auto" id="audio2" controls></audio><br><br>
+			<button type="button" class="btn btn-primary" id="re-btn">もう一度歌う</button>
+		</div>
+		<div id="progress-bar" hidden>
+			<span></span>
+			<div id="time">0:00ㅤ</div>
+		</div>
+		
+		<audio id="audio" class="w-100" controls hidden>
+			<source src="./assets/songs/song.mp3" type="audio/mpeg">
+		</audio><br>
+		<div>
+            <button type="button" class="btn btn-primary btn-play" id="ac" onclick="getMedia()" hidden>マイクアクセスを許可</button>
+			<button type="button" class="btn btn-primary btn-play" id="play-btn" onclick="startRecording(this);" hidden>スタート</button>
+			<button type="button" class="btn btn-secondary btn-pause" id="pause-btn" hidden>ストップ</button>
+			<button type="button" class="btn btn-danger btn-stop" onclick="stopRecording(this);" id="stop-btn" hidden>演奏中止</button>
+			<button type="button" class="btn btn-secondary btn-pause" id="settingb">設定</button>
+			<button type="button" class="btn btn-secondary btn-pause" id="settingc" hidden>設定</button>
+			
+		</div><br>
+		<div id="setting" hidden>
+		<details>
+			<summary>				
+				<span class="summary_inner">
+				音量<span class="icon"></span>
+			</span>
+			</summary>
+			<div class="content">
+			<button class="btn btn-primary btn-play" id="volume-up-btn">＋</button>
+			<h4 id="vo">±0</h4>
+			<button class="btn btn-danger btn-stop" id="volume-down-btn">－</button>
+			</div>
+		</details>
+		</div>
+
+		<div id="lyrics" class="scroll"> <!-- Display your lyrics here --><br><br>
+			歌詞は表示されますが、音声連動は非対応です。
+		</div>
+
+	</div> 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="./assets/audio-recorder.js"></script>
+	<script src="./assets/script.js"></script>
+	
+</body>
+</html>
