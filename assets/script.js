@@ -127,6 +127,7 @@ window.onload = function init() {
   navigator.mediaDevices.getUserMedia({audio: true})
     .then(function(stream) {
       startUserMedia(stream);
+      select.removeAttribute("hidden");	
     })
     .catch(function() {
       alert('マイクへのアクセスを許可して下さい。');
