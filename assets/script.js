@@ -131,7 +131,6 @@ window.onload = function init() {
     .catch(function() {
       alert('マイクへのアクセスを許可して下さい。');
       acBtn.removeAttribute("hidden");
-      select.setAttribute("hidden", "hidden");
   });
 };
 
