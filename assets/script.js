@@ -25,6 +25,7 @@ const vx = document.getElementById("volume-up-btn");
 const vy = document.getElementById("volume-down-btn");
 const vo = document.getElementById("vo");
 const nick = document.getElementById("nick");
+const h64 = document.getElementById("66");
 
 audio.volume -= 0.2;
 
@@ -239,6 +240,7 @@ stopBtn.addEventListener('click', () => {
     music.removeAttribute("hidden");
     h4.removeAttribute("hidden");
     div4.removeAttribute("hidden");
+    h64.removeAttribute("hidden");
 });
 
 audio2.addEventListener("play", () => {
