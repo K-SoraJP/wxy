@@ -239,11 +239,11 @@ stopBtn.addEventListener('click', () => {
     music.removeAttribute("hidden");
     h4.removeAttribute("hidden");
     div4.removeAttribute("hidden");
-    h64.removeAttribute("hidden");
     score2.innerHTML = "処理中です。画面を閉じず、しばらくお待ちください。<br>この処理は1分ほどかかる場合があります。<br>※WebAudioAPIを使用しています。";
     setTimeout(() => {
       score2.innerHTML = score;
       div2.removeAttribute("hidden");
+      h64.removeAttribute("hidden");
   }, 30000); // 5秒待ってから実行する
 });
 
